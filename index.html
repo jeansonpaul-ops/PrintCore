@@ -3,32 +3,32 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>Print Core</title>
+<title>Print Core — LuxVisual</title>
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="PrintCore">
 <meta name="mobile-web-app-capable" content="yes">
-<meta name="theme-color" content="#FF4D00">
+<meta name="theme-color" content="#003366">
 <link rel="manifest" href="manifest.json">
-<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230e0f14'/><circle cx='50' cy='50' r='30' fill='none' stroke='%23FF4D00' stroke-width='4'/><circle cx='50' cy='50' r='10' fill='%23FF4D00'/><line x1='10' y1='50' x2='90' y2='50' stroke='%23FF4D00' stroke-width='3.5' stroke-linecap='round'/><line x1='50' y1='10' x2='50' y2='90' stroke='%23FF4D00' stroke-width='3.5' stroke-linecap='round'/></svg>">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230e0f14'/><circle cx='50' cy='50' r='30' fill='none' stroke='%23003366' stroke-width='4'/><circle cx='50' cy='50' r='10' fill='%23003366'/><line x1='10' y1='50' x2='90' y2='50' stroke='%23003366' stroke-width='3.5' stroke-linecap='round'/><line x1='50' y1='10' x2='50' y2='90' stroke='%23003366' stroke-width='3.5' stroke-linecap='round'/></svg>">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900&display=swap" rel="stylesheet">
 <style>
 /* ══════════════════════════════════════════
    DESIGN TOKENS — THEMES
 ══════════════════════════════════════════ */
 :root {
   /* ── SOMBRE (défaut) ── */
-  --bg:        #0e0f14;
-  --surface:   #16181f;
-  --surface2:  #1e2028;
-  --surface3:  #272a38;
+  --bg:        #0a0c12;
+  --surface:   #13161f;
+  --surface2:  #1a1e2a;
+  --surface3:  #212538;
   --border:    rgba(255,255,255,0.07);
   --border2:   rgba(255,255,255,0.13);
   --text:      #eeedf4;
   --text2:     #8890a8;
   --text3:     #50566e;
-  --accent:    #FF4D00;
-  --accent2:   #FF8C00;
+  --accent:    #003366;
+  --accent2:   #0066CC;
   --radius-sm: 10px;
   --radius-md: 16px;
   --radius-lg: 22px;
@@ -37,22 +37,22 @@
 
 /* ── CLAIR : fond crème chaud, texte encre, accent bleu marine ── */
 [data-theme="light"] {
-  --bg:       #faf8f4;
+  --bg:       #f4f6f9;
   --surface:  #ffffff;
-  --surface2: #f0ede6;
-  --surface3: #e4e0d8;
+  --surface2: #eef1f7;
+  --surface3: #dde3ee;
   --border:   rgba(0,0,0,0.08);
   --border2:  rgba(0,0,0,0.15);
   --text:     #1a1714;
   --text2:    #6b6560;
   --text3:    #a09890;
-  --accent:   #1d4ed8;
-  --accent2:  #2563eb;
+  --accent:   #003366;
+  --accent2:  #0066CC;
 }
 [data-theme="light"] .ambient {
   background:
-    radial-gradient(ellipse 60% 50% at 10% 0%, rgba(29,78,216,0.06) 0%, transparent 60%),
-    radial-gradient(ellipse 50% 40% at 90% 90%, rgba(29,78,216,0.04) 0%, transparent 60%);
+    radial-gradient(ellipse 60% 50% at 10% 0%, rgba(0,51,102,0.06) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 90% 90%, rgba(0,51,102,0.04) 0%, transparent 60%);
   opacity: 1;
 }
 [data-theme="light"] .topbar {
@@ -64,22 +64,22 @@
 }
 [data-theme="light"] .login-logo-icon {
   background: #f0ede6;
-  border-color: rgba(29,78,216,0.25);
-  box-shadow: 0 0 30px rgba(29,78,216,0.1);
+  border-color: rgba(0,51,102,0.25);
+  box-shadow: 0 0 30px rgba(0,51,102,0.1);
 }
 [data-theme="light"] .login-logo-icon circle,
-[data-theme="light"] .login-logo-icon line { stroke: #1d4ed8; }
-[data-theme="light"] .login-logo-icon circle:nth-child(2) { fill: #1d4ed8; }
-[data-theme="light"] .topbar-icon { background: #f0ede6; border-color: rgba(29,78,216,0.2); }
+[data-theme="light"] .login-logo-icon line { stroke: #003366; }
+[data-theme="light"] .login-logo-icon circle:nth-child(2) { fill: #003366; }
+[data-theme="light"] .topbar-icon { background: #f0ede6; border-color: rgba(0,51,102,0.2); }
 [data-theme="light"] .topbar-icon circle,
-[data-theme="light"] .topbar-icon line { stroke: #1d4ed8; }
-[data-theme="light"] .topbar-icon circle:nth-child(2) { fill: #1d4ed8; }
-[data-theme="light"] .btn-login { background: #1d4ed8; box-shadow: 0 6px 20px rgba(29,78,216,0.35); }
-[data-theme="light"] .btn-login:hover { background: #1a44c0; box-shadow: 0 8px 28px rgba(29,78,216,0.45); }
-[data-theme="light"] .notif-bar { background: rgba(29,78,216,0.08); border-bottom-color: rgba(29,78,216,0.18); }
-[data-theme="light"] .notif-admin-edit { background: rgba(29,78,216,0.1); border-color: rgba(29,78,216,0.25); color: #1d4ed8; }
-[data-theme="light"] .admin-save { background: #1d4ed8; }
-[data-theme="light"] .admin-save:hover { background: #1a44c0; }
+[data-theme="light"] .topbar-icon line { stroke: #003366; }
+[data-theme="light"] .topbar-icon circle:nth-child(2) { fill: #003366; }
+[data-theme="light"] .btn-login { background: #003366; box-shadow: 0 6px 20px rgba(0,51,102,0.35); }
+[data-theme="light"] .btn-login:hover { background: #002244; box-shadow: 0 8px 28px rgba(0,51,102,0.45); }
+[data-theme="light"] .notif-bar { background: rgba(29,78,216,0.08); border-bottom-color: rgba(0,51,102,0.18); }
+[data-theme="light"] .notif-admin-edit { background: rgba(0,51,102,0.1); border-color: rgba(0,51,102,0.25); color: #003366; }
+[data-theme="light"] .admin-save { background: #003366; }
+[data-theme="light"] .admin-save:hover { background: #002244; }
 
 /* ── NUIT : noir pur, surfaces violettes profondes, accent électrique ── */
 [data-theme="nuit"] {
@@ -146,7 +146,7 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html, body {
   height: 100%; width: 100%; overflow: hidden;
-  font-family: "Inter", -apple-system, sans-serif;
+  font-family: "DM Sans", system-ui, -apple-system, sans-serif;
   background: var(--bg); color: var(--text);
   -webkit-font-smoothing: antialiased;
 }
@@ -174,15 +174,15 @@ html, body {
 .ambient {
   position: fixed; inset: 0; pointer-events: none; z-index: 0;
   background:
-    radial-gradient(ellipse 60% 50% at 10% 0%, rgba(255,77,0,0.08) 0%, transparent 60%),
-    radial-gradient(ellipse 50% 40% at 90% 90%, rgba(255,77,0,0.05) 0%, transparent 60%);
+    radial-gradient(ellipse 60% 50% at 10% 0%, rgba(0,51,102,0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 90% 90%, rgba(0,51,102,0.05) 0%, transparent 60%);
   transition: opacity 0.4s;
 }
 [data-theme="light"] .ambient { opacity: 0.4; }
 [data-theme="nuit"] .ambient {
   background:
     radial-gradient(ellipse 60% 50% at 10% 0%, rgba(80,100,255,0.12) 0%, transparent 60%),
-    radial-gradient(ellipse 50% 40% at 90% 90%, rgba(255,77,0,0.07) 0%, transparent 60%);
+    radial-gradient(ellipse 50% 40% at 90% 90%, rgba(80,60,255,0.07) 0%, transparent 60%);
 }
 
 /* ══════════════════════════════════════════
@@ -200,16 +200,16 @@ html, body {
 .login-card::before {
   content: "";
   position: absolute; top: 0; left: 0; right: 0; height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255,77,0,0.5), transparent);
+  background: linear-gradient(90deg, transparent, rgba(0,51,102,0.5), transparent);
   border-radius: var(--radius-lg) var(--radius-lg) 0 0;
 }
 .login-logo-wrap { text-align: center; margin-bottom: 1.5rem; }
 .login-logo-icon {
   width: 72px; height: 72px; border-radius: 20px;
-  background: #0a0b0f; border: 1px solid rgba(255,77,0,0.3);
+  background: #0a0b0f; border: 1px solid rgba(0,51,102,0.3);
   display: flex; align-items: center; justify-content: center;
   margin: 0 auto 1rem;
-  box-shadow: 0 0 30px rgba(255,77,0,0.15);
+  box-shadow: 0 0 30px rgba(0,51,102,0.15);
 }
 .login-appname {
   font-size: 26px; font-weight: 900; letter-spacing: -1px;
@@ -233,7 +233,7 @@ html, body {
 .input-wrap input::placeholder { color: var(--text3); }
 .input-wrap input:focus {
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(255,77,0,0.15);
+  box-shadow: 0 0 0 3px rgba(0,51,102,0.15);
 }
 .pw-eye {
   position: absolute; right: 11px; top: 50%; transform: translateY(-50%);
@@ -255,11 +255,11 @@ html, body {
   font-size: 14px; font-weight: 700; cursor: pointer;
   font-family: inherit; letter-spacing: 0.03em;
   transition: background 0.18s, transform 0.1s, box-shadow 0.18s;
-  box-shadow: 0 6px 20px rgba(255,77,0,0.4);
+  box-shadow: 0 6px 20px rgba(0,51,102,0.35);
 }
 .btn-login:hover {
-  background: #cc3d00;
-  box-shadow: 0 8px 28px rgba(255,77,0,0.5);
+  background: #002244;
+  box-shadow: 0 8px 28px rgba(0,51,102,0.5);
   transform: translateY(-1px);
 }
 .btn-login:active { transform: scale(0.98); }
@@ -270,7 +270,7 @@ html, body {
 ══════════════════════════════════════════ */
 .topbar {
   height: var(--topbar-h); flex-shrink: 0;
-  background: rgba(10,11,15,0.85); backdrop-filter: blur(20px);
+  background: rgba(8,10,16,0.88); backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border);
   display: flex; align-items: center;
   padding: 0 1.25rem; gap: 8px;
@@ -280,7 +280,7 @@ html, body {
 .topbar-brand { display: flex; align-items: center; gap: 9px; flex-shrink: 0; }
 .topbar-icon {
   width: 30px; height: 30px; border-radius: 8px;
-  background: #0a0b0f; border: 1px solid rgba(255,77,0,0.25);
+  background: #0a0b0f; border: 1px solid rgba(0,51,102,0.25);
   display: flex; align-items: center; justify-content: center;
   flex-shrink: 0;
 }
@@ -349,8 +349,8 @@ html, body {
 .notif-bar {
   display: none; align-items: center; gap: 10px;
   padding: 9px 1.25rem;
-  background: rgba(255,77,0,0.1);
-  border-bottom: 1px solid rgba(255,77,0,0.2);
+  background: rgba(0,51,102,0.1);
+  border-bottom: 1px solid rgba(0,51,102,0.2);
   font-size: 13px; color: var(--text); flex-shrink: 0; z-index: 44;
 }
 .notif-bar.show { display: flex; }
@@ -361,7 +361,7 @@ html, body {
 }
 .notif-admin-edit {
   font-size: 11px; padding: 3px 9px;
-  background: rgba(255,77,0,0.15); border: 1px solid rgba(255,77,0,0.3);
+  background: rgba(0,51,102,0.15); border: 1px solid rgba(0,51,102,0.3);
   border-radius: 6px; color: var(--accent); cursor: pointer;
   font-family: inherit; font-weight: 700;
 }
@@ -587,7 +587,7 @@ html, body {
   border: none; border-radius: 8px; font-size: 13px; font-weight: 700;
   cursor: pointer; font-family: inherit;
 }
-.admin-save:hover { background: #cc3d00; }
+.admin-save:hover { background: #002244; }
 .admin-cancel {
   padding: 9px 16px; background: none; border: 1.5px solid var(--border2);
   border-radius: 8px; color: var(--text2); font-size: 13px; cursor: pointer;
@@ -599,7 +599,7 @@ html, body {
   border: none; border-radius: 7px; font-size: 12px; font-weight: 700;
   cursor: pointer; font-family: inherit;
 }
-.btn-send:hover { background: #cc3d00; }
+.btn-send:hover { background: #002244; }
 .btn-clear {
   padding: 7px 12px; background: none;
   border: 1.5px solid var(--border2); border-radius: 7px;
@@ -715,7 +715,7 @@ input:checked + .toggle-slider:before { transform:translateX(16px);background:#f
 /* Notification badge sur bouton admin */
 .admin-notif-dot {
   width:7px;height:7px;border-radius:50%;
-  background:#FF4D00;display:none;flex-shrink:0;
+  background:#003366;display:none;flex-shrink:0;
 }
 .admin-notif-dot.show { display:block; }
 
@@ -781,8 +781,8 @@ input:checked + .toggle-slider:before { transform:translateX(16px);background:#f
 .vis-app-card.hidden:hover { opacity: 0.8; border-color: rgba(34,197,94,0.3); }
 
 </style>
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="6" fill="%230a0b0f"/><circle cx="16" cy="16" r="9" fill="none" stroke="%23FF4D00" stroke-width="2"/><circle cx="16" cy="16" r="3.5" fill="%23FF4D00"/><line x1="3" y1="16" x2="29" y2="16" stroke="%23FF4D00" stroke-width="1.8" stroke-linecap="round"/><line x1="16" y1="3" x2="16" y2="29" stroke="%23FF4D00" stroke-width="1.8" stroke-linecap="round"/></svg>">
-<link rel="apple-touch-icon" href="data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="6" fill="%230a0b0f"/><circle cx="16" cy="16" r="9" fill="none" stroke="%23FF4D00" stroke-width="2"/><circle cx="16" cy="16" r="3.5" fill="%23FF4D00"/><line x1="3" y1="16" x2="29" y2="16" stroke="%23FF4D00" stroke-width="1.8" stroke-linecap="round"/><line x1="16" y1="3" x2="16" y2="29" stroke="%23FF4D00" stroke-width="1.8" stroke-linecap="round"/></svg>">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="6" fill="%230a0b0f"/><circle cx="16" cy="16" r="9" fill="none" stroke="%23003366" stroke-width="2"/><circle cx="16" cy="16" r="3.5" fill="%23003366"/><line x1="3" y1="16" x2="29" y2="16" stroke="%23003366" stroke-width="1.8" stroke-linecap="round"/><line x1="16" y1="3" x2="16" y2="29" stroke="%23003366" stroke-width="1.8" stroke-linecap="round"/></svg>">
+<link rel="apple-touch-icon" href="data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="6" fill="%230a0b0f"/><circle cx="16" cy="16" r="9" fill="none" stroke="%23003366" stroke-width="2"/><circle cx="16" cy="16" r="3.5" fill="%23003366"/><line x1="3" y1="16" x2="29" y2="16" stroke="%23003366" stroke-width="1.8" stroke-linecap="round"/><line x1="16" y1="3" x2="16" y2="29" stroke="%23003366" stroke-width="1.8" stroke-linecap="round"/></svg>">
 </head>
 <body>
 
@@ -794,10 +794,10 @@ input:checked + .toggle-slider:before { transform:translateX(16px);background:#f
     <div class="login-logo-wrap">
       <div class="login-logo-icon">
         <svg width="46" height="46" viewBox="0 0 46 46" fill="none">
-          <circle cx="23" cy="23" r="14" fill="none" stroke="#FF4D00" stroke-width="2.2"/>
-          <circle cx="23" cy="23" r="5" fill="#FF4D00"/>
-          <line x1="5" y1="23" x2="41" y2="23" stroke="#FF4D00" stroke-width="2" stroke-linecap="round"/>
-          <line x1="23" y1="5" x2="23" y2="41" stroke="#FF4D00" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="23" cy="23" r="14" fill="none" stroke="#003366" stroke-width="2.2"/>
+          <circle cx="23" cy="23" r="5" fill="#003366"/>
+          <line x1="5" y1="23" x2="41" y2="23" stroke="#003366" stroke-width="2" stroke-linecap="round"/>
+          <line x1="23" y1="5" x2="23" y2="41" stroke="#003366" stroke-width="2" stroke-linecap="round"/>
         </svg>
       </div>
       <div class="login-appname">Print<span> Core</span></div>
@@ -826,7 +826,7 @@ input:checked + .toggle-slider:before { transform:translateX(16px);background:#f
     </div>
     <div class="login-err" id="login-err">Identifiant ou mot de passe incorrect</div>
     <button class="btn-login" onclick="doLogin()">Se connecter →</button>
-    <div class="login-footer">Print Core · v6.0 — Accès réservé au personnel autorisé</div>
+    <div class="login-footer">Print Core · v6.1 LuxVisual — Accès réservé au personnel autorisé</div>
   </div>
 </div>
 
@@ -838,10 +838,10 @@ input:checked + .toggle-slider:before { transform:translateX(16px);background:#f
     <div class="topbar-brand">
       <div class="topbar-icon">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-          <circle cx="12" cy="12" r="7" fill="none" stroke="#FF4D00" stroke-width="1.8"/>
-          <circle cx="12" cy="12" r="2.5" fill="#FF4D00"/>
-          <line x1="2" y1="12" x2="22" y2="12" stroke="#FF4D00" stroke-width="1.6" stroke-linecap="round"/>
-          <line x1="12" y1="2" x2="12" y2="22" stroke="#FF4D00" stroke-width="1.6" stroke-linecap="round"/>
+          <circle cx="12" cy="12" r="7" fill="none" stroke="#003366" stroke-width="1.8"/>
+          <circle cx="12" cy="12" r="2.5" fill="#003366"/>
+          <line x1="2" y1="12" x2="22" y2="12" stroke="#003366" stroke-width="1.6" stroke-linecap="round"/>
+          <line x1="12" y1="2" x2="12" y2="22" stroke="#003366" stroke-width="1.6" stroke-linecap="round"/>
         </svg>
       </div>
       <span class="topbar-name">Print<span> Core</span></span>
@@ -858,7 +858,7 @@ input:checked + .toggle-slider:before { transform:translateX(16px);background:#f
     <div class="topbar-right">
       <button class="admin-btn" id="admin-btn" onclick="openAdmin()">⚙ Admin</button>
       <button class="theme-btn" id="theme-btn" onclick="cycleTheme()">
-        <span class="theme-dot" id="theme-dot" style="background:#FF4D00;"></span>
+        <span class="theme-dot" id="theme-dot" style="background:#003366;"></span>
         <span id="theme-label">Dark</span>
       </button>
       <button onclick="showShortcuts()" title="Raccourcis clavier" style="padding:6px 9px;background:var(--surface2);border:1.5px solid var(--border2);border-radius:8px;color:var(--text3);cursor:pointer;font-size:12px;font-family:inherit;transition:all .15s;" onmouseover="this.style.color='var(--text)'" onmouseout="this.style.color='var(--text3)'">⌨</button>
@@ -971,13 +971,13 @@ const APP_ICONS = {
     <line x1="17" y1="20" x2="26" y2="26" stroke="#f87171" stroke-width="2.2" stroke-linecap="round"/>
     <line x1="26" y1="20" x2="17" y2="26" stroke="#f87171" stroke-width="2.2" stroke-linecap="round"/>
   </svg>`,  "bat-manager": `<svg width="48" height="48" viewBox="0 0 28 28" fill="none"><path d="M7 4h14a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" fill="rgba(255,255,255,0.12)" stroke="#fff" stroke-width="1.5"/><polyline points="10 10 13 13 19 7" stroke="#4ade80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><line x1="9" y1="17" x2="19" y2="17" stroke="rgba(255,255,255,0.5)" stroke-width="1.4" stroke-linecap="round"/><line x1="9" y1="21" x2="15" y2="21" stroke="rgba(255,255,255,0.35)" stroke-width="1.4" stroke-linecap="round"/></svg>`,
-  "stats":       `<svg width="48" height="48" viewBox="0 0 28 28" fill="none"><rect x="4" y="18" width="4" height="7" rx="1" fill="rgba(255,255,255,0.5)"/><rect x="10" y="13" width="4" height="12" rx="1" fill="rgba(255,255,255,0.7)"/><rect x="16" y="8" width="4" height="17" rx="1" fill="#fff"/><rect x="22" y="4" width="4" height="21" rx="1" fill="rgba(255,255,255,0.7)"/><polyline points="6,17 12,12 18,7 24,3" stroke="#FF4D00" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>`,
+  "stats":       `<svg width="48" height="48" viewBox="0 0 28 28" fill="none"><rect x="4" y="18" width="4" height="7" rx="1" fill="rgba(255,255,255,0.5)"/><rect x="10" y="13" width="4" height="12" rx="1" fill="rgba(255,255,255,0.7)"/><rect x="16" y="8" width="4" height="17" rx="1" fill="#fff"/><rect x="22" y="4" width="4" height="21" rx="1" fill="rgba(255,255,255,0.7)"/><polyline points="6,17 12,12 18,7 24,3" stroke="#003366" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>`,
 };
 
 const FAV_COLORS = {
-  "stock-scan":"#1d52d4","trim-scan":"#0a8c4a","plate-id":"#c47a0a",
-  "frame-calc":"#0a8fa0","pao-nc":"#c42020","lv-nc-print":"#7c2dcc",
-  "delta-e":"#0a8c4a","bat-manager":"#0e7490","stats":"#334155"
+  "stock-scan":"#003366","trim-scan":"#0a8c4a","plate-id":"#c47a0a",
+  "frame-calc":"#0891B2","pao-nc":"#DC2626","lv-nc-print":"#6D28D9",
+  "delta-e":"#059669","bat-manager":"#003366","stats":"#475569"
 };
 
 // ── USERS ──
@@ -1001,8 +1001,8 @@ const USERS = [
 
 // ── THEMES ──
 const THEMES = [
-  { key:"dark",  label:"Sombre",  dot:"#FF4D00" },
-  { key:"light", label:"Clair",   dot:"#1d4ed8" },
+  { key:"dark",  label:"Sombre",  dot:"#003366" },
+  { key:"light", label:"Clair",   dot:"#003366" },
   { key:"nuit",  label:"Nuit",    dot:"#a855f7" },
 ];
 let themeIdx = 0;
@@ -1184,8 +1184,8 @@ function sendPushNotif(title, body, tag) {
     new Notification(title, {
       body,
       tag: tag || "printcore",
-      icon: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230e0f14'/><circle cx='50' cy='50' r='30' fill='none' stroke='%23FF4D00' stroke-width='4'/><circle cx='50' cy='50' r='10' fill='%23FF4D00'/></svg>",
-      badge: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%23FF4D00'/></svg>"
+      icon: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230e0f14'/><circle cx='50' cy='50' r='30' fill='none' stroke='%23003366' stroke-width='4'/><circle cx='50' cy='50' r='10' fill='%23003366'/></svg>",
+      badge: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%23003366'/></svg>"
     });
   } catch(e) {}
 }
@@ -1682,7 +1682,7 @@ if (!navigator.onLine) document.getElementById("offline-bar").classList.add("sho
         <div id="push-perm-status" style="font-size:11px;margin-bottom:8px;"></div>
         <textarea id="push-msg" style="width:100%;margin-bottom:8px;background:var(--surface2);border:1.5px solid var(--border2);border-radius:8px;padding:9px 12px;font-size:13px;color:var(--text);font-family:inherit;outline:none;resize:vertical;min-height:55px;" placeholder="Message de notification push..."></textarea>
         <div style="display:flex;gap:8px;flex-wrap:wrap;">
-          <button onclick="sendAdminPush('notif')" style="padding:7px 13px;background:rgba(255,77,0,.15);border:1.5px solid rgba(255,77,0,.35);border-radius:8px;font-size:11px;font-weight:700;color:var(--accent);cursor:pointer;font-family:inherit;">📢 Envoyer push</button>
+          <button onclick="sendAdminPush('notif')" style="padding:7px 13px;background:rgba(0,51,102,.15);border:1.5px solid rgba(0,51,102,.35);border-radius:8px;font-size:11px;font-weight:700;color:var(--accent);cursor:pointer;font-family:inherit;">📢 Envoyer push</button>
           <button onclick="sendAdminPush('nc')" style="padding:7px 13px;background:rgba(220,38,38,.1);border:1.5px solid rgba(220,38,38,.3);border-radius:8px;font-size:11px;font-weight:700;color:#ef4444;cursor:pointer;font-family:inherit;">🔴 Alerte NC</button>
           <button onclick="sendAdminPush('bat')" style="padding:7px 13px;background:rgba(34,197,94,.1);border:1.5px solid rgba(34,197,94,.3);border-radius:8px;font-size:11px;font-weight:700;color:#22c55e;cursor:pointer;font-family:inherit;">✅ Alerte BAT</button>
         </div>
@@ -1847,7 +1847,7 @@ function renderAdminVisibility() {
       const app = APPS[id];
       const isVisible = userApps.includes(id);
       const col = APP_COLORS[id] || "#555";
-      const adminTag = app.adminOnly ? `<span style="font-size:8px;color:#FF4D00;font-weight:700;display:block;">Admin</span>` : "";
+      const adminTag = app.adminOnly ? `<span style="font-size:8px;color:#003366;font-weight:700;display:block;">Admin</span>` : "";
       return `<div class="vis-app-card ${isVisible?'visible':'hidden'}" id="vc-${u.user}-${id}">
         <button class="vis-remove-btn" onclick="toggleAppVis('${u.user}','${id}',false)" title="Retirer">✕</button>
         <button class="vis-add-btn"    onclick="toggleAppVis('${u.user}','${id}',true)"  title="Donner">+</button>
